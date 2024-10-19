@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>hellodotnet</name>
+    </assembly>
+    <members>
+        <member name="M:hellodotnet.Adnane.Main(System.String[])">
+            This is an XML comment with 3 slashes
+            <summary>
+            This is a Test App to Say Hello
+            </summary>
+            <param name='args'>An array of string arguments from the command line</param>
+            <returns>
+            No value returned
+            </returns>
+        </member>
+    </members>
+</doc>
