@@ -2,6 +2,8 @@
 // Console.WriteLine("Hello, World!");
 
 using System;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace hellodotnet{
     class Adnane{
@@ -17,6 +19,26 @@ namespace hellodotnet{
             Console.WriteLine("What's yo name brah ?");
             string str = Console.ReadLine();
             Console.WriteLine("yo name iz: " + str);
+
+            using(IWebDriver driver = new ChromeDriver()){
+                driver.Navigate().GoToUrl("https://www.google.com");
+
+                IWebElement searchBox = driver.FindElement(By.Name("q"));
+                searchBox.SendKeys("Selenium WebDriver");
+
+                searchBox.Submit();
+
+                System.Threading.Thread.Sleep(2000);
+
+                IWebElement results = driver.FindElement(By.Id("search"));
+                if(results.Displayed){ 
+                    Console.WriteLine("Search results are displayed !!!");
+                }else{
+                    Console.WriteLine("Search results are NOT displayed !");
+                }
+
+                driver.Quit();
+            }
         }
     }
 }
